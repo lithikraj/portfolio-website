@@ -1,0 +1,61 @@
+/* styles.css */
+:root {
+    --primary: #8A2BE2;
+    --secondary: #9400D3;
+    --accent: #E0B0FF;
+}
+
+@keyframes gradientFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d0a4d 100%);
+    color: white;
+    min-height: 100vh;
+}
+
+/* Animated Gradient Background for Home */
+#home {
+    position: relative;
+    overflow: hidden;
+}
+
+#home::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        #8A2BE2,
+        #9400D3,
+        #4B0082,
+        #8A2BE2
+    );
+    background-size: 400% 400%;
+    animation: gradientFlow 10s ease infinite;
+    z-index: -1;
+    opacity: 0.3;
+}
+
+#home h1 {
+    position: relative;
+    text-shadow: 0 0 15px rgba(138, 43, 226, 0.5);
+}
+
+/* Keep all your existing CSS below this line */
+header { ... }
+nav ul { ... }
+/* ... rest of your CSS rules ... */

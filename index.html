@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lithikraj Narayana | MERN Developer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #8A2BE2;
+            --secondary: #9400D3;
+            --accent: #E0B0FF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d0a4d 100%);
+            color: white;
+            min-height: 100vh;
+        }
+
+        /* Header */
+        header {
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.3s;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+        }
+
+        nav a:hover {
+            background: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        /* Sections */
+        section {
+            padding: 6rem 2rem 2rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: 0.6s;
+        }
+
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        h1, h2 {
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 2rem;
+        }
+
+        /* Social Buttons */
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .social-btn {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: 0.3s;
+            text-decoration: none;
+            color: white;
+        }
+
+        .social-btn:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        /* Projects Grid */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .project-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .tech-stack {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin: 1rem 0;
+        }
+
+        .tech-tag {
+            background: var(--primary);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        /* Education & Skills */
+        .education-item, .skill-category {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+        }
+
+        .skill-list {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .skill-item {
+            background: var(--primary);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+        }
+
+        /* Achievements */
+        .achievement-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .achievement-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        /* Contact Form */
+        #contact form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 0.8rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            color: white;
+        }
+
+        button[type="submit"] {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            color: white;
+            cursor: pointer;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#achievements">Achievements</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home">
+        <h1>Lithikraj Narayana</h1>
+        <p class="subtitle">Full Stack Developer | Cloud Enthusiast</p>
+        <div class="social-links">
+            <a href="https://github.com/GitLithik" class="social-btn" target="_blank">
+                <i class="fab fa-github"></i> GitHub
+            </a>
+            <a href="https://www.linkedin.com/in/lithikraj12" class="social-btn" target="_blank">
+                <i class="fab fa-linkedin"></i> LinkedIn
+            </a>
+            <a href="https://leetcode.com/Codelithik" class="social-btn" target="_blank">
+                <i class="fas fa-code"></i> LeetCode
+            </a>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+        <h2>Education</h2>
+        <div class="education-item">
+            <h3>Chaitanya Bharathi Institute of Technology</h3>
+            <p>B.E in Information Technology | 2022-2025</p>
+            <p>CGPA: 7.26/10.0</p>
+        </div>
+        <div class="education-item">
+            <h3>TRR College of Technology (Polytechnic)</h3>
+            <p>Diploma in Computer Engineering | 2018-2021</p>
+            <p>CGPA: 6.44/10.0</p>
+        </div>
+        <div class="education-item">
+            <h3>Dilsukhnagar Public School</h3>
+            <p>Class X | 2012-2018</p>
+            <p>CGPA: 8.5/10.0</p>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2>Skills</h2>
+        <div class="skill-category">
+            <h3>Programming</h3>
+            <div class="skill-list">
+                <span class="skill-item">Python</span>
+                <span class="skill-item">JavaScript</span>
+                <span class="skill-item">HTML5</span>
+                <span class="skill-item">CSS3</span>
+                <span class="skill-item">Data Structures</span>
+            </div>
+        </div>
+        <div class="skill-category">
+            <h3>Frameworks</h3>
+            <div class="skill-list">
+                <span class="skill-item">React.js</span>
+                <span class="skill-item">Node.js</span>
+                <span class="skill-item">Express.js</span>
+                <span class="skill-item">Flutter</span>
+            </div>
+        </div>
+        <div class="skill-category">
+            <h3>Databases & Tools</h3>
+            <div class="skill-list">
+                <span class="skill-item">MongoDB</span>
+                <span class="skill-item">SQL</span>
+                <span class="skill-item">Git/GitHub</span>
+                <span class="skill-item">VS Code</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="project-grid">
+            <!-- Cloud Kitchen App -->
+            <div class="project-card">
+                <h3>Cloud Kitchen App</h3>
+                <div class="tech-stack">
+                    <span class="tech-tag">Flutter</span>
+                    <span class="tech-tag">Dart</span>
+                    <span class="tech-tag">Firebase</span>
+                </div>
+                <p>Developed a cross-platform food delivery app with real-time order tracking. Integrated Firebase for backend services achieving &lt;0.5s latency.</p>
+            </div>
+
+            <!-- College ACE Portal -->
+            <div class="project-card">
+                <h3>College ACE Portal</h3>
+                <div class="tech-stack">
+                    <span class="tech-tag">React.js</span>
+                    <span class="tech-tag">Node.js</span>
+                    <span class="tech-tag">MongoDB</span>
+                </div>
+                <p>Full-stack academic portal with role-based authentication and 99% uptime. Reduced page load time by 35%.</p>
+            </div>
+
+            <!-- Driver Drowsiness Detection -->
+            <div class="project-card">
+                <h3>Driver Drowsiness Detection</h3>
+                <div class="tech-stack">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">OpenCV</span>
+                    <span class="tech-tag">TensorFlow</span>
+                </div>
+                <p>Real-time fatigue detection system with 96% accuracy using CNNs. Reduced simulated accidents by 70%.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements">
+        <h2>Achievements & Certifications</h2>
+        <div class="achievement-grid">
+            <div class="achievement-card">
+                <i class="fas fa-trophy"></i>
+                <h3>Google Cloud Gold League</h3>
+                <p>Top performer in Google Cloud Skills Boost</p>
+            </div>
+            <div class="achievement-card">
+                <i class="fas fa-certificate"></i>
+                <h3>Terraform Specialist</h3>
+                <p>Build Infrastructure with Terraform</p>
+            </div>
+            <div class="achievement-card">
+                <i class="fas fa-certificate"></i>
+                <h3>Cloud Network Expert</h3>
+                <p>Develop Google Cloud Networks</p>
+            </div>
+            <div class="achievement-card">
+                <i class="fas fa-basketball-ball"></i>
+                <h3>Sports Champion</h3>
+                <p>SHRUTHI '23 Basketball Winner</p>
+            </div>
+            <div class="achievement-card">
+                <i class="fas fa-code"></i>
+                <h3>MERN Stack Intern</h3>
+                <p>Codegnan Certification</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact</h2>
+        <form>
+            <div class="form-group">
+                <input type="text" placeholder="Name" required>
+            </div>
+            <div class="form-group">
+                <input type="email" placeholder="Email" required>
+            </div>
+            <div class="form-group">
+                <textarea placeholder="Message" rows="5" required></textarea>
+            </div>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <script>
+        // Scroll Animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Form Submission
+        document.querySelector('form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you for reaching out! I will respond shortly.');
+        });
+    </script>
+</body>
+</html>
