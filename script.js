@@ -13,20 +13,7 @@ document.querySelectorAll('section').forEach(section => {
 });
 
 // Form Submission
-// Add EmailJS initialization
-(function() {
-    emailjs.init("service_wu9tn9k"); // Get this from EmailJS dashboard
-  })();
-  
-  // Update form submission
-  document.querySelector('form').addEventListener('submit', (e) => {
+document.querySelector('form').addEventListener('submit', (e) => {
     e.preventDefault();
-    
-    emailjs.sendForm('service_id', 'template_id', e.target)
-      .then(() => {
-        alert('Message sent successfully!');
-      }, (error) => {
-        alert('Error: ' + JSON.stringify(error));
-      });
-  });
+    alert('Thank you for reaching out! I will respond shortly.');
 });
