@@ -5,6 +5,13 @@
     --accent: #E0B0FF;
 }
 
+/* ======== Add Wave Animation Keyframes Here ======== */
+@keyframes waveFlow {
+  0% { transform: rotate(0deg) translateY(0); }
+  50% { transform: rotate(5deg) translateY(-20px); }
+  100% { transform: rotate(0deg) translateY(0); }
+}
+
 @keyframes gradientFlow {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
@@ -24,7 +31,45 @@ body {
     min-height: 100vh;
 }
 
-/* Animated Gradient Background for Home */
+/* ======== Add Wave Container Styles Here ======== */
+.wave-container {
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  left: -50%;
+  top: -50%;
+  z-index: -2;
+  opacity: 0.4;
+  animation: waveFlow 8s ease-in-out infinite;
+}
+
+.wave-layer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #8A2BE2, #9400D3, #4B0082, #2E0854);
+  border-radius: 40%;
+}
+
+.wave-layer:nth-child(1) {
+  animation: waveFlow 10s infinite linear;
+  opacity: 0.6;
+  filter: blur(30px);
+}
+
+.wave-layer:nth-child(2) {
+  animation: waveFlow 12s infinite linear reverse;
+  opacity: 0.4;
+  filter: blur(40px);
+}
+
+.wave-layer:nth-child(3) {
+  animation: waveFlow 14s infinite linear;
+  opacity: 0.3;
+  filter: blur(50px);
+}
+
+/* Existing Gradient Background */
 #home {
     position: relative;
     overflow: hidden;
@@ -50,9 +95,11 @@ body {
     opacity: 0.3;
 }
 
+/* Add this update to h1 */
 #home h1 {
     position: relative;
     text-shadow: 0 0 15px rgba(138, 43, 226, 0.5);
+    z-index: 2; /* Ensure text stays above all backgrounds */
 }
 
 /* Keep all your existing CSS below this line */
