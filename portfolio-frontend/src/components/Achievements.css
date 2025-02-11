@@ -1,0 +1,122 @@
+.achievements-section {
+  padding: 5rem 2rem;
+  background: var(--gradient-primary);
+  min-height: 100vh;
+}
+
+.achievements-section h2 {
+  text-align: center;
+  color: white;
+  margin-bottom: 3rem;
+  font-size: 2.5rem;
+}
+
+.achievements-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.achievement-card {
+  background: rgba(124, 58, 237, 0.15);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  border-radius: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.achievement-card:hover {
+  transform: translateY(-5px);
+}
+
+.achievement-card h3 {
+  color: white;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 0.8rem;
+}
+
+.achievement-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.achievement-card li {
+  color: white;
+  padding: 0.8rem 0;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  position: relative;
+  padding-left: 2rem;
+}
+
+.achievement-card li::before {
+  content: '🏆';
+  position: absolute;
+  left: 0;
+  font-size: 1.1rem;
+}
+
+/* Mobile styles */
+@media screen and (max-width: 768px) {
+  .achievements-section {
+    padding: 3rem 1rem;
+  }
+
+  .achievements-container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 0;
+  }
+
+  .achievement-card {
+    margin: 0 1rem;
+    padding: 1.5rem;
+  }
+
+  .achievement-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .achievement-card li {
+    font-size: 1rem;
+    padding: 0.6rem 0 0.6rem 1.8rem;
+  }
+
+  .achievement-card li::before {
+    font-size: 1rem;
+  }
+
+  .achievements-section h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+}
+
+/* Fix for very small screens */
+@media screen and (max-width: 360px) {
+  .achievement-card {
+    margin: 0 0.5rem;
+    padding: 1rem;
+  }
+
+  .achievement-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .achievement-card li {
+    font-size: 0.95rem;
+    padding-left: 1.6rem;
+  }
+
+  .achievement-card li::before {
+    font-size: 0.95rem;
+  }
+} 

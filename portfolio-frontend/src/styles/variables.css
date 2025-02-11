@@ -1,0 +1,31 @@
+:root {
+  /* Violet Gradient Variations */
+  --gradient-primary: linear-gradient(135deg, #8B5CF6 0%, #6366F1 100%);
+  --gradient-secondary: linear-gradient(135deg, #7C3AED 0%, #4F46E5 100%);
+  --gradient-dark: linear-gradient(135deg, #4C1D95 0%, #4338CA 100%);
+  --gradient-light: linear-gradient(135deg, #A78BFA 0%, #818CF8 100%);
+  
+  /* Base Colors */
+  --violet-dark: #4C1D95;
+  --violet-medium: #7C3AED;
+  --violet-light: #A78BFA;
+  
+  /* Text Colors */
+  --text-primary: #FFFFFF;
+  --text-secondary: rgba(255, 255, 255, 0.8);
+  
+  /* Background Colors */
+  --bg-transparent: rgba(255, 255, 255, 0.1);
+  --bg-glass: rgba(124, 58, 237, 0.2);
+}
+
+/* Global styles */
+body {
+  background: var(--gradient-dark);
+  color: var(--text-primary);
+}
+
+/* Ensure text visibility */
+* {
+  color: inherit;
+} 
