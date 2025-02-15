@@ -10,6 +10,15 @@ nav {
   top: 0;
   z-index: 1000;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease; /* Smooth transition */
+}
+
+nav.scrolled {
+  background: transparent; /* Make background transparent */
+  padding: 1.5rem 2rem; /* Keep padding consistent */
+  border-bottom: none; /* Remove border */
+  opacity: 0; /* Make navbar invisible */
+  pointer-events: none; /* Disable interactions */
 }
 
 .nav-brand {

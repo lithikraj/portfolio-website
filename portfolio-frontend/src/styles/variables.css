@@ -17,6 +17,7 @@
   /* Background Colors */
   --bg-transparent: rgba(255, 255, 255, 0.1);
   --bg-glass: rgba(124, 58, 237, 0.2);
+  --background: rgba(255, 255, 255, 0.1); /* Example background color */
 }
 
 /* Global styles */

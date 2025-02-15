@@ -55,21 +55,22 @@ const Home = () => {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.8 }}
         >
-          <a href="https://www.linkedin.com/in/lithikraj12" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.linkedin.com/in/lithikraj12" target="_blank" rel="noopener noreferrer" className="animated-button">
             <i className="fab fa-linkedin"></i>
             LinkedIn
           </a>
-          <a href="https://github.com/lithikraj" target="_blank" rel="noopener noreferrer">
+          <a href="https://github.com/lithikraj" target="_blank" rel="noopener noreferrer" className="animated-button">
             <i className="fab fa-github"></i>
             GitHub
           </a>
-          <a href="https://leetcode.com/u/lithikraj03/" target="_blank" rel="noopener noreferrer">
+          <a href="https://leetcode.com/u/lithikraj03/" target="_blank" rel="noopener noreferrer" className="animated-button">
             <i className="fas fa-code"></i>
             LeetCode
           </a>
           <a href="https://www.cloudskillsboost.google/public_profiles/3c024265-cc0c-4790-a002-da754279cb1b" 
              target="_blank" 
-             rel="noopener noreferrer">
+             rel="noopener noreferrer"
+             className="animated-button">
             <i className="fab fa-google"></i>
             Cloud Skills Boost
           </a>
