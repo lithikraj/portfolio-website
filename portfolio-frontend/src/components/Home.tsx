@@ -55,24 +55,20 @@ const Home = () => {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.8 }}
         >
-          <a href="https://www.linkedin.com/in/lithikraj12" target="_blank" rel="noopener noreferrer" className="animated-button">
-            <i className="fab fa-linkedin"></i>
-            LinkedIn
+          <a href="https://www.linkedin.com/in/lithikraj12" target="_blank" rel="noopener noreferrer" className="btn-shine">
+            <span>LinkedIn</span>
           </a>
-          <a href="https://github.com/lithikraj" target="_blank" rel="noopener noreferrer" className="animated-button">
-            <i className="fab fa-github"></i>
-            GitHub
+          <a href="https://github.com/lithikraj" target="_blank" rel="noopener noreferrer" className="btn-shine">
+            <span>GitHub</span>
           </a>
-          <a href="https://leetcode.com/u/lithikraj03/" target="_blank" rel="noopener noreferrer" className="animated-button">
-            <i className="fas fa-code"></i>
-            LeetCode
+          <a href="https://leetcode.com/u/lithikraj03/" target="_blank" rel="noopener noreferrer" className="btn-shine">
+            <span>LeetCode</span>
           </a>
           <a href="https://www.cloudskillsboost.google/public_profiles/3c024265-cc0c-4790-a002-da754279cb1b" 
              target="_blank" 
              rel="noopener noreferrer"
-             className="animated-button">
-            <i className="fab fa-google"></i>
-            Cloud Skills Boost
+             className="btn-shine">
+            <span>Cloud Skills Boost</span>
           </a>
         </motion.div>
       </motion.div>
